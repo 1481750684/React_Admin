@@ -1,13 +1,11 @@
 import React from 'react';
-import 'style/test.less'
-import { Button } from 'antd';
 
-function App() {
+function App(props) {
+  // console.log(props)  
+  // 可以通过props.children来获取组件标签中的内容
   return (
     <div className="App">
-      <header className="App-header">
-        <Button type="primary">点击</Button>
-      </header>
+      {props.children}
     </div>
   );
 }
