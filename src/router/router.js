@@ -6,12 +6,16 @@ import Login from 'pages/login'
 import Admin from 'pages/admin'
 import Food from 'pages/food'
 import User from 'pages/user'
+import Cart from 'pages/cart'
+import Banner from 'pages/banner'
+import TokenModel from 'components/tokenModel'
 
 class RootRouter extends Component {
     render() {
         return (
             <App>
                 <HashRouter>
+                    <TokenModel></TokenModel>
                     <Switch>
                         <Redirect exact from='/' to='/admin'></Redirect>
                         <Route path='/login' component={Login}></Route>
@@ -20,6 +24,8 @@ class RootRouter extends Component {
                                 <Admin>
                                     <Route path='/admin/food' component={Food}></Route>
                                     <Route path='/admin/user' component={User}></Route>
+                                    <Route path='/admin/cart' component={Cart}></Route>
+                                    <Route path='/admin/banner' component={Banner}></Route>
                                 </Admin>
                             )
                         }}></Route>

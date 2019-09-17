@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
 import './index.less'
 
+import LeftNav from 'components/leftNav'
+
 class Admin extends Component {
     render() {
         return (
             <div className='admin'>
-                <div className='admin-left'>左边</div>
+                <div className='admin-left'>
+                    <LeftNav></LeftNav>
+                </div>
                 <div className='admin-right'>
                     <div className='admin-right-top'>上</div>
                     <div className='admin-right-middle'>
