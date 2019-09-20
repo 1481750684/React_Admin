@@ -5,14 +5,16 @@ import ActionCreator from '../store/actionCreator'
 // Add a request interceptor
 axios.interceptors.request.use(function (config) {
     // Do something before request is sent
-    // console.log('请求拦截器',config)
+    //  console.log('请求拦截器',config)
     let {method} = config
     let token = localStorage.getItem('token')
     if(method === 'get'){
       config.url += `&token=${token}`
     }
-    if(method === 'post'){
-      config.data += `&token=${token}`
+    if(method === 'post'){  // data或者headers
+      if( config.url !== '/api/admin/file/upload') {  // 文件上传不需要token
+        config.data += `&token=${token}`
+      }
     }
     return config;
   }, function (error) {

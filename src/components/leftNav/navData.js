@@ -1,7 +1,12 @@
 export default [
     {name:'首页', key:'0', icon:'home', path:'/admin/home'},
-    /* {name:'商品管理', key:'1', icon:'shopping-cart', path:'/admin/food'}, */
-    {name:'商品管理', key:'1', icon:'gift', path:'/admin/food'},
+    {name:'商品管理', key:'1', icon:'gift', path:'/admin/food', children:[
+        {name:'商品列表', key:'1-0', path:'/admin/food/list'},
+        {name:'商品添加', key:'1-1', path:'/admin/food/add'},
+        {name:'上传文件', key:'1-2', path:'/admin/food/file'},
+        {name:'上传Base64', key:'1-3', path:'/admin/food/base64'},
+        {name:'上传antd', key:'1-4', path:'/admin/food/antd'}
+    ]},
     {name:'广告管理', key:'2', icon:'sound', path:'/admin/banner'},
     {name:'购物车管理', key:'3', icon:'shopping-cart', path:'/admin/cart'},
     {name:'用户管理', key:'4', icon:'user', path:'/admin/user'},

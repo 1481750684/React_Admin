@@ -83,7 +83,7 @@ module.exports = function(proxy, allowedHost) {
     public: allowedHost,
     proxy: {
       '/api': {
-        target: 'http://10.9.22.253:8080',
+        target: 'http://localhost:8080',
         changeDrigin: true,
         pathRewrite: {
           '^/api': ''

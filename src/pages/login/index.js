@@ -4,12 +4,13 @@ import { Form, Icon, Input, Button, Card, message } from 'antd';
 
 class Login extends Component {
     login = ()=>{
-        let value = this.props.form.getFieldsValue()
+        // let value = this.props.form.getFieldsValue()
         this.props.form.validateFields((error,data)=>{
             // console.log(error,data)
             if(error) { // 前端验证有误
                 message.error('账号错误，请重新输入',1)
             }else{  // 前端验证成功，调用Ajax接口
+                // this.$axios.post('/api/admin/user/login',{user:data.username,psd:data.password})
                 this.$axios.post(`/api/admin/user/login?user=${data.username}&psd=${data.password}`)
                 .then((data)=>{
                     // console.log(data)
