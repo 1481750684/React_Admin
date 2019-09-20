@@ -10,7 +10,9 @@ class Login extends Component {
             if(error) { // 前端验证有误
                 message.error('账号错误，请重新输入',1)
             }else{  // 前端验证成功，调用Ajax接口
-                this.$axios.post(`/api/admin/user/login?user=${data.username}&psd=${data.password}`)
+                //修改部分
+                 this.$axios.post(`/api/admin/user/login?user=${data.username}&psd=${data.password}`)
+               // this.$axios.post(`/api/admin/user/login?us=${data.us}&ps=${data.ps}`)
                 .then((data)=>{
                     // console.log(data)
                     if(data.err === 0){
@@ -35,8 +37,11 @@ class Login extends Component {
                     {getFieldDecorator('username', {
                         rules: [
                             { required: true, message: '请输入您的账号~' },
+                            //修改部分
                             { max: 12, message: '不能大于12个字符~' },
                             { min: 6, message: '不能小于6个字符~' }
+                            // { max: 3, message: '不能大于3个字符~' },
+                            // { min: 3, message: '不能小于3个字符~' }
                         ],
                     })(
                         <Input 
