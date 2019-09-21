@@ -83,6 +83,7 @@ module.exports = function(proxy, allowedHost) {
     public: allowedHost,
     proxy: {
       '/api': {
+
         target: 'http://localhost:3000',
         changeDrigin: true,
         pathRewrite: {
@@ -90,6 +91,16 @@ module.exports = function(proxy, allowedHost) {
         }
       }
     },
+    // proxy: {
+    //   '/api': {
+
+    //     target:'http://10.9.22.229:3000',
+    //     changeDrigin: true,
+    //     pathRewrite: {
+    //       '^/api': ''
+    //     }
+    //   }
+    // },
     before(app, server) {
       if (fs.existsSync(paths.proxySetup)) {
         // This registers user provided middleware for proxy reasons

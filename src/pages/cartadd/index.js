@@ -52,6 +52,7 @@ class FoodAdd   extends Component{
         return(
         
            <Card title='商品添加'>
+             <div className="box">
              名称：<input type="text" value={name} onChange={(e)=>{
                this.setState({name:e.target.value})
              }}/><br/>
@@ -78,6 +79,7 @@ class FoodAdd   extends Component{
                <option>轿车</option>
                </select><br/>
              <Button type='primary' onClick={this.submit}>提交</Button>
+             </div>
            </Card>
         )
     }
