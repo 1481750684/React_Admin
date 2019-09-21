@@ -11,7 +11,8 @@ import UploadBase64 from 'pages/foodadd/upload_base64.js'
 import UploadAntd from 'pages/foodadd/upload_antd.js'
 import User from 'pages/user'
 import Cart from 'pages/cart'
-import Banner from 'pages/banner'
+import Bannerlist from 'pages/banner'
+import Banneradd from 'pages/banneradd'
 import TokenModel from 'components/tokenModel'
 
 class RootRouter extends Component {
@@ -33,7 +34,8 @@ class RootRouter extends Component {
                                     <Route path='/admin/food/antd' component={UploadAntd}></Route>
                                     <Route path='/admin/user' component={User}></Route>
                                     <Route path='/admin/cart' component={Cart}></Route>
-                                    <Route path='/admin/banner' component={Banner}></Route>
+                                    <Route path='/admin/banner/list' component={Bannerlist}></Route>
+                                    <Route path='/admin/banner/add' component={Banneradd}></Route>
                                 </Admin>
                             )
                         }}></Route>
