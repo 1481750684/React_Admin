@@ -16,7 +16,7 @@ class TokenModel extends Component {
         // console.log(this)
         return (
             <Fragment>
-                {! this.props.modelState || 
+                {!this.props.modelState || 
                     <div className="tokenModel">
                         <Card className='card'>
                             <h2>token缺失，请重新登录</h2>

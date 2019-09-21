@@ -5,7 +5,7 @@ export default (preState=State,action)=>{
     let {type,params} = action
     switch (type) {
         case 'CHANGE_MODELSTATE':
-            newData.modelState = ! newData.modelState
+            newData.modelState =!newData.modelState
             break;
     
         default:
