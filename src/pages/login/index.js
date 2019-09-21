@@ -47,7 +47,7 @@ class Login extends Component {
                     })(
                         <Input 
                             prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                            placeholder="用户名: admin or user"
+                            placeholder="账号 : username"
                         />
                     )}
                 </Form.Item>
@@ -56,7 +56,7 @@ class Login extends Component {
                     {getFieldDecorator('password', {})(
                         <Input
                             prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                            placeholder="密码: ant.design"
+                            placeholder="密码 : password"
                             type="password"
                         />
                     )}

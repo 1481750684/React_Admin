@@ -10,9 +10,15 @@ import UploadFile from 'pages/foodadd/upload_file.js'
 import UploadBase64 from 'pages/foodadd/upload_base64.js'
 import UploadAntd from 'pages/foodadd/upload_antd.js'
 import User from 'pages/user'
-import Cart from 'pages/cart'
+
+import CartList from 'pages/cart'
+import CartAdd from 'pages/cartadd'
+// import Banner from 'pages/banner'
+
+
 import Bannerlist from 'pages/banner'
 import Banneradd from 'pages/banneradd'
+
 import TokenModel from 'components/tokenModel'
 import Pie from 'pages/echarts/pie.js'
 import Line from 'pages/echarts/line.js'
@@ -34,10 +40,15 @@ class RootRouter extends Component {
                                     <Route path='/admin/food/file' component={UploadFile}></Route>
                                     <Route path='/admin/food/base64' component={UploadBase64}></Route>
                                     <Route path='/admin/food/antd' component={UploadAntd}></Route>
+
                                     <Route path='/admin/user' component={User}></Route>
-                                    <Route path='/admin/cart' component={Cart}></Route>
+
+                                    <Route path='/admin/cart/list' component={CartList}></Route>
+                                    <Route path='/admin/cart/add' component={CartAdd}></Route>  
+
                                     <Route path='/admin/banner/list' component={Bannerlist}></Route>
                                     <Route path='/admin/banner/add' component={Banneradd}></Route>
+                                    
                                     <Route path='/admin/echarts/pie' component={Pie}></Route>
                                     <Route path='/admin/echarts/line' component={Line}></Route>
                                 </Admin>

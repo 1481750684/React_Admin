@@ -74,7 +74,7 @@ class Food extends Component {
             render(data) {
                 // console.log('图片',data)
                 return (
-                    <img width='70' src={data} alt=""/>
+                    <img width='80' src={data} alt=""/>
                 )
             }
         },

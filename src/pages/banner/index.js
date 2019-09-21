@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {Card,Table,Button,Pagination,Spin,Popconfirm, message} from 'antd'
 import qs from 'qs'
-import './index.less'
+ import './index.less'
 import Bannerupdate from '../bannerupdate/index.js'
 class Banner extends Component {
     constructor(){
@@ -33,7 +33,7 @@ class Banner extends Component {
           render(data){
             //console.log('image',data)
             return(
-                <img width='120' height='80' src={data}/>
+                <img width='120' height='80' src={data} alt=''/>
             )
         }
         },
@@ -86,7 +86,7 @@ class Banner extends Component {
         let {page,pageSize}=this.state
         this.$axios.post('/api/admin/banner/del',query)
         .then((data)=>{
-            if(data.err==0){
+            if(data.err === 0){
                 message.success('删除成功')
                 this.initData(page,pageSize)
             }else{

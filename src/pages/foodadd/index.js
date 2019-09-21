@@ -50,7 +50,6 @@ class FoodAdd extends Component{
             let query = qs.stringify({name,desc,img,foodtype,price})
             // console.log(query)
             this.$axios.post('/api/admin/food/add',query)
-            // this.$axios.post('/api/admin/food/add',{query})
             .then((data)=>{
                 // console.log('获取数据',data)
                 if(data.err === 0){
@@ -62,6 +61,7 @@ class FoodAdd extends Component{
     
     render() {
         let {name,desc,img,foodtype,price} = this.state
+        let rootPath = 'http://localhost:8080'
         return (
             <Card className='add' title='添加商品'>
                 <p>名称</p>
@@ -93,9 +93,7 @@ class FoodAdd extends Component{
                 <input type="file" ref='file' />
                 <button onClick={this.upload}>上传图片</button>
                 <p></p>
-                <img src={img} width='200' alt=""/>
-
-                <p></p>
+                <img src={rootPath+img} width='200' alt=""/>
                 <Button type='primary' onClick={this.submit}>提交</Button>
             </Card>
         )
