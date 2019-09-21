@@ -2,6 +2,7 @@ import React, { Component,Fragment } from 'react'
 import {Card, Table, Button, Pagination, Spin, Popconfirm, message} from 'antd'
 import qs from 'qs'
 import './index.less'
+import FoodUpdata from '../foodupdata'
 
 class Food extends Component {
     constructor() {
@@ -11,7 +12,9 @@ class Food extends Component {
             page: 1,
             pageSize: 4,
             total: 0,
-            loading: true
+            loading: true,
+            updataShow: false,  // 模态框显示隐藏
+            record: {} // 要修改的数据
         }
     }
     initData = (page,pageSize)=>{
@@ -48,6 +51,18 @@ class Food extends Component {
     componentDidMount() {
         let {page,pageSize} = this.state
         this.initData(page,pageSize)
+    }
+    updata = (record) => {
+        // console.log('修改数据',record)
+        this.setState({
+            updataShow: !this.state.updataShow,
+            record: record
+        })
+    }
+    refresh = () => {   // 刷新页面
+        let {page,pageSize} = this.state
+        this.setState({updataShow: false})  // 关掉模态框
+        this.initData(page,pageSize) //刷新页面
     }
     columns = [
         {
@@ -98,7 +113,7 @@ class Food extends Component {
                 // console.log(text,record)
                 return (
                     <Fragment>
-                        <Button type="primary" size='small'>修改</Button>
+                        <Button type="primary" size='small' onClick={this.updata.bind(this,record)}>修改</Button>
                         <Popconfirm // 气泡确认框
                             title="您确定要删除此项吗?"
                             onConfirm={this.confirmDel.bind(this,record._id)}
@@ -112,12 +127,13 @@ class Food extends Component {
                 )
             }
         },
-      ];
+    ];
     render() {
-        let {total,pageSize,loading} = this.state
+        let {total,pageSize,loading,updataShow,record} = this.state
         return (
             <Card>
                 <Spin tip='数据加载ing...' spinning={loading}>
+                    {!updataShow || <FoodUpdata record={record} refreshFun={this.refresh}></FoodUpdata>}
                     <Table
                         dataSource = {this.state.dataSource}
                         columns = {this.columns}

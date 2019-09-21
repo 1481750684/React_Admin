@@ -14,6 +14,8 @@ import Cart from 'pages/cart'
 import Bannerlist from 'pages/banner'
 import Banneradd from 'pages/banneradd'
 import TokenModel from 'components/tokenModel'
+import Pie from 'pages/echarts/pie.js'
+import Line from 'pages/echarts/line.js'
 
 class RootRouter extends Component {
     render() {
@@ -36,6 +38,8 @@ class RootRouter extends Component {
                                     <Route path='/admin/cart' component={Cart}></Route>
                                     <Route path='/admin/banner/list' component={Bannerlist}></Route>
                                     <Route path='/admin/banner/add' component={Banneradd}></Route>
+                                    <Route path='/admin/echarts/pie' component={Pie}></Route>
+                                    <Route path='/admin/echarts/line' component={Line}></Route>
                                 </Admin>
                             )
                         }}></Route>

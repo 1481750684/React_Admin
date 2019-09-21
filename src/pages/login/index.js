@@ -39,10 +39,10 @@ class Login extends Component {
                         rules: [
                             { required: true, message: '请输入您的账号~' },
                             //修改部分
-                            // { max: 12, message: '不能大于12个字符~' },
-                            // { min: 6, message: '不能小于6个字符~' }
-                            { max: 3, message: '不能大于3个字符~' },
-                            { min: 3, message: '不能小于3个字符~' }
+                            { max: 12, message: '不能大于12个字符~' },
+                            { min: 6, message: '不能小于6个字符~' }
+                            // { max: 3, message: '不能大于3个字符~' },
+                            // { min: 3, message: '不能小于3个字符~' }
                         ],
                     })(
                         <Input 

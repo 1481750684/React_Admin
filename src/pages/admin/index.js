@@ -11,11 +11,11 @@ class Admin extends Component {
                     <LeftNav></LeftNav>
                 </div>
                 <div className='admin-right'>
-                    <div className='admin-right-top'>上</div>
+                    <div className='admin-right-top'>后 台 管 理 系 统</div>
                     <div className='admin-right-middle'>
                         {this.props.children}
                     </div>
-                    <div className='admin-right-bottom'>下</div>
+                    <div className='admin-right-bottom'></div>
                 </div>
             </div>
         )

@@ -93,7 +93,7 @@ class FoodAdd extends Component{
                 <input type="file" ref='file' />
                 <button onClick={this.upload}>上传图片</button>
                 <p></p>
-                <img src={this.state.img} width='200' alt=""/>
+                <img src={img} width='200' alt=""/>
 
                 <p></p>
                 <Button type='primary' onClick={this.submit}>提交</Button>
