@@ -15,7 +15,7 @@ class Admin extends Component {
                     <div className='admin-right-middle'>
                         {this.props.children}
                     </div>
-                    <div className='admin-right-bottom'></div>
+                    <div className='admin-right-bottom'>iPhone 11 Pro Max</div>
                 </div>
             </div>
         )
